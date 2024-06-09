@@ -1,20 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Card = () => {
+const Card = ({title,tags,image,origin}) => {
+  let tag = tags.filter((item,index)=>(index<2));
+  let origins = origin.filter((item,index)=>(index<2));
   return (
     <div id='card'>
-       <Link to={`https://www.youtube.com/results?search_query=daalbati recipe`}>
+       <Link to={`https://www.youtube.com/results?search_query=${title} recipe`}>
           <div id="image">
-            <img src="./2.jpg" alt="" />
+            <img src={image} alt="" />
 
           </div>
           <div id="info">
-            <h3>Daal Baati</h3>
-            <p>Indian Kitchen</p>
+            <h3>{title}</h3>
+            {origins.map((item,index)=>(<p>{item}</p>))}
             <div id="tags">
-              <h4>Vegeterian</h4>
-              <h4>Vegan</h4>
+              {tag.map((item,index)=>(<h4>{item}</h4>))}
+              
+              
             </div>
           </div>
        </Link>

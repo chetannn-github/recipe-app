@@ -3,6 +3,7 @@ import './App.css';
 import SideBar from './Components/SideBar';
 import Recomended from './Components/Recomended';
 import Favourites from './Components/Favourites';
+import useReciepe from './utils/customHooks/useReciepe';
 
  export const appRouter = createBrowserRouter([{
     path:"/",
@@ -20,7 +21,7 @@ import Favourites from './Components/Favourites';
  }]);
 
 function App() {
-
+    useReciepe();
 
   return (
     <div id='main'>

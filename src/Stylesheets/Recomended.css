@@ -1,6 +1,6 @@
 #recomended{
     position: relative;
-    width: 82vw;
+    min-width: 82vw;
     min-height:100vh ;
 
     /* background: #b87575; */
@@ -22,15 +22,16 @@
     width: 80%;
 
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 20px;
     
 }
 
 #card{
     
-    width: 30%;
+    width: 32%;
     height: 250px;
     padding: 10px;
     /* background: #744dd1; */background: #F9EFE1;
@@ -41,8 +42,10 @@
     height: 60%;
     width: 100%;
     overflow: hidden;
-     border-radius: 10px;
-     margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-position: center;
+
 }
 #card #image img{
     height: 100%;
@@ -58,8 +61,10 @@
 }
 #card #info p{
     font-weight: 200;
-    font-size: medium;
+    font-size: 15px;
     margin: 5px 0;
+    text-transform: capitalize;
+
 
 }
 #card #info #tags{
@@ -72,5 +77,6 @@
     padding:2px 10px;
     border-radius: 10px;
     font-weight: 500;
+    font-size:14px ;
 
 }
