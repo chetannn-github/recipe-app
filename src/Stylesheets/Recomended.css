@@ -15,8 +15,8 @@
     
 }
 #recomended #search{
-    width: 80%;
-    font-size: 30px; 
+    width:80%;
+    
     position: relative;
     left: 50%;
     top: 0;
@@ -24,7 +24,7 @@
    
     font-weight:300;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 5px;
 
 }
@@ -34,8 +34,8 @@
 
 
 #recomended input{
-    width:100% ;
-    font-size: 30px; 
+    width:50% ;
+    font-size: 20px; 
    
     padding: 5px 10px;
     font-weight:300;
@@ -148,6 +148,8 @@
     font-size: 15px;
     margin: 5px 0;
     text-transform: capitalize;
+    display: inline-block;
+    margin-right: 10px;
 
 
 }
@@ -176,13 +178,14 @@
 
     #recomended h1{
         width: 90%;
-        font-size: 9vw;
+        font-size: 8vw;
         font-weight: 600; 
         
     }
 
     #recomended>p{
         width: 90%;
+        font-size: 13px;
         
     }
     

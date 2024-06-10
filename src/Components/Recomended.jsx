@@ -16,7 +16,7 @@ const Recomended = () => {
    return (
     <div id='recomended'>
       <div id="search">
-     <Search/><input ref={searchquery} type="text" onKeyDown={handleSearch}  placeholder='Mummy! Aaj kya ban rha hh?'></input>
+     <Search/><input ref={searchquery} type="text" onKeyDown={handleSearch}  placeholder='🍲 Mummy, aaj kya bana rahi ho?'></input>
      </div>
       
       <h1>Recomended  Recipes </h1>
