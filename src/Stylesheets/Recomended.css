@@ -4,18 +4,31 @@
     min-height:100vh ;
 
     /* background: #b87575; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
+
+    /* left: 50%;
+    top: 0;
+    transform: translate(-50%,0); */
+    
 }
 
 #recomended h1{
     width: 80%;
-    font-size: 45px;
+    font-size: 45px; 
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
 }
 
-#recomended p{
+#recomended>p{
     width: 80%;
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
 }
 
  #cards{
@@ -25,13 +38,18 @@
     /* justify-content: space-between; */
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 20px; 
+    
+    position: relative;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,0);
     
 }
 
 #card{
     
-    width: 32%;
+    width: 300px;
     height: 250px;
     padding: 10px;
     /* background: #744dd1; */background: #F9EFE1;
@@ -45,6 +63,42 @@
     border-radius: 10px;
     margin-bottom: 10px;
     object-position: center;
+    position: relative;
+
+}
+
+#card #image #serving{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background: #ffffff;
+    font-weight: 500;
+    margin: 8px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+#card #image #favs{
+    position: absolute;
+    right:  0;
+    top: 0;
+    z-index: 5;
+    background: #ffffff;
+    font-weight: 500;
+    margin: 8px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 #card #image img{
@@ -79,4 +133,46 @@
     font-weight: 500;
     font-size:14px ;
 
+}
+
+
+
+
+@media (max-width :425px) {
+    #recomended{
+        margin-top: 20px;
+        min-width: 100vw;
+    }
+
+    #recomended h1{
+        width: 90%;
+        font-size: 9vw;
+        font-weight: 600; 
+        
+    }
+
+    #recomended>p{
+        width: 90%;
+        
+    }
+    
+     #cards{
+        width: 90%;
+    
+       
+        
+    }
+
+    #card{
+    
+        width: 350px;
+        
+        padding: 0px;
+        
+    }
+    
+
+
+    
+    
 }

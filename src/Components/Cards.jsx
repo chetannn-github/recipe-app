@@ -8,7 +8,7 @@ const Cards = () => {
 
   return (
     <div id='cards'>
-       {cardsData.map((item,index) =>(<Card title={item.recipe.label} tags={item.recipe.healthLabels} image={item.recipe.image} origin={item.recipe.cuisineType}/>))}
+       {cardsData.map((item,index) =>(<Card title={item.recipe.label} tags={item.recipe.healthLabels} image={item.recipe.image} origin={item.recipe.cuisineType} servings={item.recipe.yield}/>))}
     </div>
   )
 }

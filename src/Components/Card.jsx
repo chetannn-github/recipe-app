@@ -1,7 +1,8 @@
+import { Cookie, Heart } from 'lucide-react';
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Card = ({title,tags,image,origin}) => {
+const Card = ({title,tags,image,origin,servings}) => {
   let tag = tags.filter((item,index)=>(index<2));
   let origins = origin.filter((item,index)=>(index<2));
   return (
@@ -9,6 +10,8 @@ const Card = ({title,tags,image,origin}) => {
        <Link to={`https://www.youtube.com/results?search_query=${title} recipe`}>
           <div id="image">
             <img src={image} alt="" />
+            <div id="serving"><Cookie />{servings} Servings</div>
+            <div id="favs"><Heart /></div>
 
           </div>
           <div id="info">

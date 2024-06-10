@@ -1,8 +1,8 @@
 #desktop-side-bar{
-    width: 18vw;
+    min-width: 18vw;
     max-height: 100vh;
     /* background: #c9b1b1; */
-    position: sticky;
+    /* position: fixed; */
 
     display: flex;
     flex-direction: column;
@@ -37,8 +37,42 @@
 }
 
 
-#desktop-side-bar .nav{
+#desktop-side-bar .nav a{
    margin-bottom: 20px;
+   display: flex;
+    align-items: center;
+    
+    gap: 5px;
     
 }
 
+#mobile-side-bar{
+    display: none;
+}
+
+
+@media (max-width :425px) {
+    #desktop-side-bar{
+        display: none;
+    }
+
+    #mobile-side-bar{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height:50px;
+        width: 100vw;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        z-index: 5;
+    }
+
+    #mobile-side-bar #navigation{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
