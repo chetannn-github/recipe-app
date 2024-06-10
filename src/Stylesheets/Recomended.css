@@ -131,6 +131,21 @@
     justify-content: center;
 
 }
+
+#card #image #favs .heart:hover{
+    /* background: #c75757; */
+    fill: red;
+    color: red;
+
+}
+
+
+#card #image #favs .heart.fill{
+    /* background: #c75757; */
+    fill: red;
+    
+ color: red;
+}
 #card #image img{
     height: 100%;
     width: 100%;

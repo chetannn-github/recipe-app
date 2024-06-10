@@ -6,9 +6,6 @@
 
 }
 
-*::selection{
-    display: none;
-}
 
 html,body{
     width:100%;

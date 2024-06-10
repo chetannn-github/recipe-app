@@ -1,14 +1,14 @@
 import React from 'react';
 import Card from "./Card"
-import { useSelector } from 'react-redux';
 
-const Cards = () => {
-  let cardsData = useSelector((store)=>(store.reciepe));
+const Cards = ({cardsData}) => {
+  
+  
   if (!cardsData  ) return;
 
   return (
     <div id='cards'>
-       {cardsData.map((item,index) =>(<Card title={item.recipe.label} tags={item.recipe.healthLabels} image={item.recipe.image} origin={item.recipe.cuisineType} servings={item.recipe.yield}/>))}
+       {cardsData.map((item,index) =>(<Card key={index} cardData={item} />))}
     </div>
   )
 }

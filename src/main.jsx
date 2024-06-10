@@ -8,8 +8,8 @@ import appstore from './utils/redux/appstore.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Provider store={appstore}  >
 <RouterProvider router={appRouter}>
-  <React.StrictMode>
+  
     
     <App />
-  </React.StrictMode></RouterProvider></Provider>,
+  </RouterProvider></Provider>,
 )
