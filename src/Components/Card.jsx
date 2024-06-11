@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { addFavs, removeFavs } from '../utils/redux/reciepeSlice';
 import Favourites from './Favourites';
+import { getRandomColor } from '../utils/utils';
 
 const Card = ({cardData}) => { 
   let dispatch = useDispatch();
@@ -11,7 +12,8 @@ const Card = ({cardData}) => {
   let tag = tags.filter((item,index)=>(index<2));
   let origins = origin.filter((item,index)=>(index<2));
   
-  // console.log(cardData)
+  let {bg,badge} = getRandomColor();
+  console.log(cardData)
  
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   let checkfav =  favorites.some((item,index) =>(item.recipe.label.includes(title)));
@@ -38,7 +40,7 @@ const Card = ({cardData}) => {
 
   }
   return (
-    <div id='card'>
+    <div id='card' style={{background:bg} }>
        <Link to={`https://www.youtube.com/results?search_query=${title} recipe`}>
           <div id="image">
             <img src={image} alt="" />
@@ -50,7 +52,7 @@ const Card = ({cardData}) => {
             <h3>{title}</h3>
             {origins.map((item,index)=>(<p key={index}>{item}</p>))}
             <div id="tags">
-              {tag.map((item,index)=>(<h4 key={index}>{item}</h4>))}
+              {tag.map((item,index)=>(<h4 style={{backgroundColor:badge}} key={index}>{item}</h4>))}
               
               
             </div>
