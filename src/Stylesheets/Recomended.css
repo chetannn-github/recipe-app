@@ -19,8 +19,9 @@
 }
 #recomended #search{
     width:80%;
-    
-    position: relative;
+    height: 6vh;
+    background: #fffdfd;
+    position:fixed;
     left: 50%;
     top: 0;
     transform: translate(-50%,0);
@@ -30,6 +31,7 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
+    z-index: 5;
 
 }
 
@@ -49,6 +51,7 @@
 
 
 #recomended h1{
+    margin-top: 6vh;
     width: 80%;
     font-size: 45px; 
     position: relative;
