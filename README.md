@@ -1,4 +1,4 @@
-# Build a Recipe Finder for Your Mom | React & TailwindCSS
+# Build a Recipe Finder| React ,Redux & Vanilla CSS
 
 ![Preview](/public/preview.png)
 
