@@ -3,36 +3,38 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { addFavs, removeFavs } from '../utils/redux/reciepeSlice';
+import Favourites from './Favourites';
 
 const Card = ({cardData}) => { 
   let dispatch = useDispatch();
   let {label:title,healthLabels:tags,image,cuisineType:origin,yield:servings} = cardData.recipe;
   let tag = tags.filter((item,index)=>(index<2));
   let origins = origin.filter((item,index)=>(index<2));
-  let favs = useSelector((store)=>(store.reciepe.favs));
+  
   // console.log(cardData)
  
-  
-  let checkfav =  favs.some((item,index) =>(item.recipe.label.includes(title)));
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  let checkfav =  favorites.some((item,index) =>(item.recipe.label.includes(title)));
   
   let [fav,setFav] = useState(checkfav);
   let handleFav =(e) =>{
     e.preventDefault();
     
     if(fav){
-       let remove = favs.filter((item,index) =>!(item.recipe.label===(title)));
-        console.log(remove)
-        dispatch(removeFavs(remove));
+       favorites = favorites.filter((item,index) =>!(item.recipe.label===(title)));
+        console.log(favorites)
+        dispatch(removeFavs(favorites));
         setFav(false);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
 
     }else{
+      favorites.push(cardData);
         dispatch(addFavs(cardData));
-        setFav(true)
-    }
-    useEffect(() => {
-      setFav(checkfav);
-    }, [cardData, favs, checkfav]);
-  
+        setFav(true);
+       
+    } 
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+   
 
   }
   return (
