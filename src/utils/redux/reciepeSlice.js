@@ -5,7 +5,7 @@ const ReciepeSlice = createSlice({
     initialState:{
         recommended:null,
         favs:[],
-        searchTxt:"paneer",
+        searchTxt:"baati",
     },
     reducers:{
         addReciepe:(state,action) =>{
