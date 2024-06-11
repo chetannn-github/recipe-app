@@ -207,6 +207,7 @@
         font-weight: 600; 
         margin-top: 6vh;
         
+        
     }
 
     #recomended #search{
@@ -244,7 +245,7 @@
      #cards{
         width: 90%;
     
-       
+        margin-bottom: 50px;
         
     }
 
