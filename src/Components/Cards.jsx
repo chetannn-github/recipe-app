@@ -8,7 +8,7 @@ const Cards = ({cardsData}) => {
 
   return (
     <div id='cards'>
-       {cardsData.map((item,index) =>(<Card key={index} cardData={item} />))}
+       {cardsData.map((item,index) =>(<Card key={item.recipe.label} cardData={item} />))}
     </div>
   )
 }

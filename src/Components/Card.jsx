@@ -1,29 +1,38 @@
 import { Cookie, Heart } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { addFavs, removeFavs } from '../utils/redux/reciepeSlice';
 
-const Card = ({cardData}) => {
-  let {label:title,healthLabels:tags,image,cuisineType:origin,yield:servings} = cardData.recipe;
-  let favs = useSelector((store)=>(store.reciepe.favs));
-  // console.log(cardData)
+const Card = ({cardData}) => { 
   let dispatch = useDispatch();
+  let {label:title,healthLabels:tags,image,cuisineType:origin,yield:servings} = cardData.recipe;
   let tag = tags.filter((item,index)=>(index<2));
   let origins = origin.filter((item,index)=>(index<2));
-  let checkfav =  favs.some((item,index) =>(item.recipe.label===(title)));
-  let [fav,toggleFav] = useState(checkfav);
+  let favs = useSelector((store)=>(store.reciepe.favs));
+  // console.log(cardData)
+ 
+  
+  let checkfav =  favs.some((item,index) =>(item.recipe.label.includes(title)));
+  
+  let [fav,setFav] = useState(checkfav);
   let handleFav =(e) =>{
     e.preventDefault();
     
     if(fav){
        let remove = favs.filter((item,index) =>!(item.recipe.label===(title)));
         console.log(remove)
-        dispatch(removeFavs(remove))
+        dispatch(removeFavs(remove));
+        setFav(false);
+
     }else{
-        dispatch(addFavs(cardData))
+        dispatch(addFavs(cardData));
+        setFav(true)
     }
-    toggleFav((fav)=>!fav)
+    useEffect(() => {
+      setFav(checkfav);
+    }, [cardData, favs, checkfav]);
+  
 
   }
   return (

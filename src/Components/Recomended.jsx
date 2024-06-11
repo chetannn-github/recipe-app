@@ -3,17 +3,18 @@ import Cards from './Cards'
 import "../Stylesheets/Recomended.css"
 import useReciepe from '../utils/customHooks/useReciepe';
 import { Search } from 'lucide-react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeSearchTxt } from '../utils/redux/reciepeSlice';
 
 const Recomended = () => {
   let searchquery = useRef(null);
-  const [query, setQuery] = useState(null);
+ let dispatch = useDispatch();
   const handleSearch = (e) => {
     if (e.key === 'Enter') {
-      setQuery(searchquery.current.value);
+      dispatch(changeSearchTxt(searchquery.current.value));
     }
   };
-  useReciepe(query);
+   useReciepe();
   let cardsData = useSelector((store)=>(store.reciepe.recommended));
    return (
     <div id='recomended'>

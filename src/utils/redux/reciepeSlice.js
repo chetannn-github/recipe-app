@@ -5,6 +5,7 @@ const ReciepeSlice = createSlice({
     initialState:{
         recommended:null,
         favs:[],
+        searchTxt:"paneer",
     },
     reducers:{
         addReciepe:(state,action) =>{
@@ -17,9 +18,12 @@ const ReciepeSlice = createSlice({
             console.log(action.payload);
           state.favs=action.payload;
         },
+        changeSearchTxt:(state,action) =>{
+            state.searchTxt= action.payload;
+        }
         
     }
 })
 
 export default ReciepeSlice.reducer;
-export const {addReciepe ,addFavs,removeFavs} = ReciepeSlice.actions;
+export const {addReciepe ,addFavs,removeFavs,changeSearchTxt} = ReciepeSlice.actions;
