@@ -1,6 +1,6 @@
 #recomended{
     position: relative;
-    min-width: 82vw;
+    max-width: 82vw;
     min-height:100vh ;
 
     /* background: #b87575; */
@@ -11,7 +11,9 @@
     /* left: 50%;
     top: 0;
     transform: translate(-50%,0); */
-    margin-top: 30px;
+    padding-top: 30px;
+    overflow: hidden;
+    margin-left: 18vw;
     
 }
 #recomended #search{

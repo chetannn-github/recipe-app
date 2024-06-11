@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Cards from './Cards'
 import "../Stylesheets/Recomended.css"
 import useReciepe from '../utils/customHooks/useReciepe';
-import { Search } from 'lucide-react';
+import { Heart, Search } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeSearchTxt } from '../utils/redux/reciepeSlice';
 
@@ -22,8 +22,8 @@ const Recomended = () => {
      <Search/><input ref={searchquery} type="text" onKeyDown={handleSearch}  placeholder='🍲 Mummy, aaj kya bana rahi ho?'></input>
      </div>
       
-      <h1>Recomended  Recipes </h1>
-      <p>Popular choices</p>
+      <h1>Tasty Tadka Picks </h1>
+      <p>Must-Try Mania </p>
       <Cards cardsData={cardsData}/>
     </div>
   )

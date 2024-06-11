@@ -1,8 +1,5 @@
 const COLORS = {
-	green: {
-		bg: "#ECF7D4",
-		badge: "#D6F497",
-	},
+	
 	orange: {
 		bg: "#F9EFE1",
 		badge: "#F7E0B8",

@@ -2,7 +2,9 @@
     min-width: 18vw;
     max-height: 100vh;
     /* background: #c9b1b1; */
-    /* position: fixed; */
+    position: fixed;
+    top: 0;
+    left: 0;
 
     display: flex;
     flex-direction: column;
@@ -48,6 +50,9 @@
 
 #mobile-side-bar{
     display: none;
+    position: absolute;
+    height: 0;
+    width: 0;
 }
 
 
