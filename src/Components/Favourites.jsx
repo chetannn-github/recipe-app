@@ -6,8 +6,8 @@ const Favourites = () => {
   let favs = useSelector((store)=>(store.reciepe.favs));
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   return (
-    <div id='recomended'>
-      <h1>🍽️ Aapki Fav Dishes 🌟</h1>
+    <div id='recomended' >
+      <h1 className='fav'>🍽️ Aapki Fav Dishes 🌟</h1>
       
       <Cards cardsData={favorites}/>
     </div>
