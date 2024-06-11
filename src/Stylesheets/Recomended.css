@@ -1,6 +1,6 @@
 #recomended{
     position: relative;
-    max-width: 82vw;
+    min-width: 82vw;
     min-height:100vh ;
 
     /* background: #b87575; */
